@@ -4,12 +4,12 @@
 #include <unistd.h>
 void error_handling(char* message);
 
-int main(void1)
+int main(void)
 {
 	int fd;
-	char buf[]="Let's go!\n"
+	char buf[]="Let's go!\n";
 	
-	fd=open("data.txt", O_CREATE|O_WRONLY|O_TRUNC);
+	fd=open("data.txt", O_CREAT|O_WRONLY|O_TRUNC);
 	if(fd==-1)
 		error_handling("open() error!");
 	printf("file dscriptor: %d \n", fd);
