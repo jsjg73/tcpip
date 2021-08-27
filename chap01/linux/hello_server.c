@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 	
 	if(argc!=2)
 	{
-		printf("Usage : %s <port>\n", argv[0]]);
+		printf("Usage : %s <port>\n", argv[0]);
 		exit(1);
 	}
 	//	int socket(int domain, int type, int protocol);
@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
 		error_handling("accept() error");
 		
 	write(clnt_sock, message, sizeof(message));
-	close(clnt_scok);
+	close(clnt_sock);
 	close(serv_sock);
 	return 0;
 }
