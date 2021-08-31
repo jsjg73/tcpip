@@ -53,6 +53,7 @@ int main(int argc, char *argv[])
 			write(clnt_sock, message, str_len);
 
 		close(clnt_sock);
+		printf("Close client %d \n", i+1);
 	}
 	close(serv_sock);
 	return 0;
