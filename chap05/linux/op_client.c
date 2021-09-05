@@ -36,6 +36,7 @@ int main(int argc, char* argv[]){
                 puts("Connected............");
 	
         int op_cnt;
+	message[0]=0;
         printf("Oerand count: ");
         scanf("%d", &op_cnt);
 
@@ -44,7 +45,7 @@ int main(int argc, char* argv[]){
         {
                 printf("Operand %d: ", j+1);
                 scanf("%s", num);
-                if(strlen(message)!=0)
+                if(j!=0)
                         strcat(message, ",");
                 strcat(message, num);
         }
@@ -55,10 +56,12 @@ int main(int argc, char* argv[]){
         strcat(message, ",");
         strcat(message, operator);
 
+	printf("message: %s \n ",message);
+
         write(sock, message, strlen(message));
         str_len=read(sock, message, BUF_SIZE-1);
         message[str_len]=0;
-        printf("Operation result: %s", message);
+        printf("Operation result: %s \n", message);
 
         close(sock);
         return 0;
